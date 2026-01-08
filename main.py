@@ -23,8 +23,29 @@ def MainScreen(menu):
                 cprint("Reactor Tempreture :" + str(CoreTemp), 'cyan', end='\r')
             else:
                 print("Reactor Tempreture :" + str(CoreTemp), end='\r')
+            if keyboard.is_pressed("c") == True:
+                menu = "Coolent"
         if menu == "Coolent":
             print("Coolent Configuration")
+            Position = 1
+            if keyboard.is_pressed("m") == True:
+                menu = "main"
+            if keyboard.is_pressed("down") == True:
+                if Position >= 5:
+                    Position = 5
+                else:
+                    Position = Position +1
+            if keyboard.is_pressed("up") == True:
+                if Position <= 1:
+                    Position = 1
+                else:
+                    Position = Position -1
+            
+            print("Coolent Pump 1", end='\r')
+            print("Coolent Pump 2", end='\r')
+            print("Coolent Pump 3", end='\r')
+            print("Coolent Pump 4", end='\r')
+        
 
             
 
